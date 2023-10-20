@@ -12,6 +12,8 @@
             break;
         case "Admin":
             $role=2;
+            $_POST["house"]="";
+            $_POST["year"]="";
             break; 
         }
     $stmt = $conn->prepare("INSERT INTO TblUsers (UserID,Gender,Surname,Forename,Password,House,Year ,Role)VALUES (null,:gender,:surname,:forename,:password,:house,:year,:role)");
