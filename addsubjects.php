@@ -1,4 +1,14 @@
 <?php
+	session_start(); 
+	if (!isset($_SESSION['name']))
+	{   
+		$_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
+		header("Location:login.php");
+	}
+?>
+
+<?php
+
 //header('Location:subjects.php');
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);

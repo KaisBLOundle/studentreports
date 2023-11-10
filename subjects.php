@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html>
+    <?php
+        session_start(); 
+        if (!isset($_SESSION['name']))
+        {   
+            $_SESSION['backURL'] = $_SERVER['REQUEST_URI'];
+            header("Location:login.php");
+        }
+    ?>
+
     <title>Subjects</title>
     <body>
         <form action="addsubjects.php" method="post">
